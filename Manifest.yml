@@ -1,0 +1,9 @@
+---
+applications:
+- name: eshop
+  buildpack: dotnet_core_buildpack
+  disk: 512M
+  memory: 1G
+  instances: 1
+  env:
+    ASPNETCORE_ENVIRONMENT: Development
