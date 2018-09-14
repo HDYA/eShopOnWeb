@@ -6,6 +6,7 @@ using System;
 using Microsoft.Extensions.Logging;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 
 namespace Microsoft.eShopWeb
 {
@@ -38,10 +39,17 @@ namespace Microsoft.eShopWeb
             host.Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://0.0.0.0:5106")
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            // Use settings from environment variables
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
+
+            return WebHost.CreateDefaultBuilder(args)
+                .UseConfiguration(config)
                 .UseStartup<Startup>()
                 .Build();
+        }
     }
 }

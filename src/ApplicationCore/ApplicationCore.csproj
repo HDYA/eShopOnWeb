@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
     <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
 </Project>
